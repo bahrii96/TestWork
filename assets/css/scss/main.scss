@@ -1,0 +1,17 @@
+@use "inc" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@import "ui/_button";
+// @import "partials/header";
+// @import "partials/footer";

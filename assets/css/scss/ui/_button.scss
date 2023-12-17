@@ -1,0 +1,14 @@
+@import "../inc/vars";
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  position: relative;
+
+  color: white;
+  border: rem(2) solid white;
+  font-size: rem(18);
+  padding: rem(5) rem(8);
+  background-color: black;
+}

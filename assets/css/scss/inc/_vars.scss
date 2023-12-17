@@ -1,0 +1,117 @@
+@use "sass:math" as *;
+@use "sass:list" as *;
+
+@function rem($value) {
+  $remValue: div($value, 16) + rem;
+  @return $remValue;
+}
+
+$bodyfontsize: rem(16);
+$maxContainerWidth: rem(1270);
+
+.container {
+  max-width: $maxContainerWidth;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 rem(15);
+}
+// <Mixins-media-queries>=========================================================================================================
+
+@mixin desktop-md {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin tablet-md {
+  @media (max-width: 1120px) {
+    @content;
+  }
+}
+
+@mixin tablet-smm {
+  @media (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin tablet-sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-md {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin mobile-sm {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+// Mixins
+
+$maxWidth: 1440;
+$mobWidth: 320;
+
+@function vw($value) {
+  $vwValue: calc(#{$value} / #{$maxWidth} * 100vw);
+  @return $vwValue;
+}
+
+@function vw-m($value) {
+  $vwValue: calc(#{$value} / #{$mobWidth} * 100vw);
+  @return $vwValue;
+}
+
+//mixin-buttons
+@mixin button($background-color, $text-color: null) {
+  @include interactive-effects($background-color, "background");
+  background-color: $background-color;
+  color: $text-color;
+}
+
+//interactive-effects-button
+
+@mixin interactive-effects($color, $state) {
+  @if $state == background {
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: darken($color, 10%);
+      }
+    }
+
+    &:focus {
+      background-color: darken($color, 15%);
+    }
+
+    &:active {
+      background-color: darken($color, 25%);
+    }
+  } @else if $state == color {
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: darken($color, 10%);
+      }
+    }
+
+    &:focus {
+      color: darken($color, 15%);
+    }
+
+    &:active {
+      color: darken($color, 25%);
+    }
+  }
+}
+
+$font_paragraph: clamp(rem(14), vw(16), rem(16));
+$p_h1: clamp(rem(32), vw(40), rem(40));
+$p_h2: clamp(rem(26), vw(36), rem(36));
+$p_h3: clamp(rem(20), vw(26), rem(26));
+$p_h4: clamp(rem(16), vw(22), rem(22));
+$p_h5: clamp(rem(16), vw(18), rem(18));

@@ -1,0 +1,31 @@
+{
+  "name": "marti",
+  "version": "1.0.0",
+  "description": "html tpl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "va",
+  "license": "ISC",
+  "resolutions": {
+    "graceful-fs": "^4.2.11"
+  },
+  "dependencies": {
+    "cssnano": "^6.0.1",
+    "g": "^2.0.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssimport": "^3.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^1.0.0"
+  },
+  "devDependencies": {
+    "critical": "^5.1.1",
+    "gulp": "4.0.2",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.50.0"
+  }
+}
