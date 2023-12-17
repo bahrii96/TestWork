@@ -16,14 +16,14 @@ function add_product_image_field()
 	echo '</div>';
 
 	echo '<input type="hidden" name="_product_image_id" id="_product_image_id" value="' . esc_attr($product_image_id) . '" />';
-	echo '<button type="button" class="button button-secondary" id="upload_image_button">' . __('Upload Image', 'your_text_domain') . '</button>';
-	echo '<button type="button" class="button button-secondary" id="remove_image_button">' . __('Remove Image', 'your_text_domain') . '</button>';
+	echo '<button type="button" class="button button-secondary" id="upload_image_button" style="margin:5px;">' . __('Upload Image', 'your_text_domain') . '</button>';
+	echo '<button type="button" class="button button-secondary" id="remove_image_button" style="margin:5px;">' . __('Remove Image', 'your_text_domain') . '</button>';
 	echo '</div>';
 
 ?>
 	<script>
 		jQuery(document).ready(function($) {
-			var frame;
+			let frame;
 			$('#upload_image_button').on('click', function(e) {
 				e.preventDefault();
 
@@ -41,7 +41,7 @@ function add_product_image_field()
 				});
 
 				frame.on('select', function() {
-					var attachment = frame.state().get('selection').first().toJSON();
+					let attachment = frame.state().get('selection').first().toJSON();
 					$('#_product_image_id').val(attachment.id);
 					$('.image-preview').html('<img src="' + attachment.url + '" alt="Product Image" style="max-width:350px;height:auto;" />');
 				});

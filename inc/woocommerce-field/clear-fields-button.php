@@ -26,7 +26,7 @@ add_action('save_post', 'save_all_custom_product_fields', 10, 1);
 function add_custom_clear_fields_button()
 {
 	echo '<div class="product_custom_field">';
-	echo '<button type="button" class="button clear_custom_fields_button">Clear All Fields</button>';
+	echo '<button type="button" class="button clear_custom_fields_button" style="margin:5px;">Clear All Fields</button>';
 	echo '</div>';
 }
 

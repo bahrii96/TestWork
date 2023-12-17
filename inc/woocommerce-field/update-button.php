@@ -3,7 +3,7 @@
 function add_custom_update_button()
 {
 	echo '<div class="product_custom_field">';
-	echo '<button type="button" class="button update_product_button">Update Product</button>';
+	echo '<button type="button" class="button update_product_button" style="margin:5px;">Update Product</button>';
 	echo '</div>';
 }
 

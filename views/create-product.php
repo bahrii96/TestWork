@@ -3,7 +3,7 @@
 Template Name: Create Product
 */
 
-// session_start();
+session_start();
 
 
 if (
@@ -101,7 +101,7 @@ get_header(); ?>
 						<input type="text" name="product_title" id="product_title" required>
 					</p>
 					<p><label for="product_price">Product Price:</label>
-						<input type="text" name="product_price" id="product_price" required>
+						<input type="number" name="product_price" id="product_price" required>
 					</p>
 				</div>
 				<div class="form-block__box">
